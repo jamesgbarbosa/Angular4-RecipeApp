@@ -41,6 +41,11 @@ export class RecipeService {
     this.onRecipesChange.next(this.recipes.slice());
   }
 
+  deleteRecipe(recipe: Recipe) {
+    this.recipes.splice(this.recipes.findIndex( element => {return element.id === recipe.id }), 1)
+    this.onRecipesChange.next(this.recipes.splice())
+  }
+
   getRecipe(id: number) {
     let recipe = this.recipes.find((rec) => {
       return rec.id === id;
