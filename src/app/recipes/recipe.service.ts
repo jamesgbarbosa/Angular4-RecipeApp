@@ -39,7 +39,6 @@ export class RecipeService {
     recipe.id = id;
     this.recipes[this.recipes.findIndex( element => {return element.id === id })] = recipe;
     this.onRecipesChange.next(this.recipes.slice());
-    console.log(this.recipes)
   }
 
   getRecipe(id: number) {
