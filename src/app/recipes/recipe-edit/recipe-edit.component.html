@@ -58,7 +58,7 @@
         </div>
         <hr>
         <div class="col-xs-12">
-          <input type="button" (click)="onAddIngredient()" value="Add Ingredient" class="btn btn-success" [disabled]="f.invalid()">
+          <input type="button" (click)="onAddIngredient()" value="Add Ingredient" class="btn btn-success" [disabled]="!f.valid">
         </div>
       </div>
     </form>

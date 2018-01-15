@@ -18,20 +18,25 @@ export class RecipeListComponent implements OnInit {
   ngOnInit() {
     this.recipes = this.recipeService.getRecipes();
 
-    const observable = Observable.interval(300);
-    observable.take(2).map((data)=>{return data+"a"}).subscribe( (data) => {
-        console.log(data);
-      },()=> {},
-      ()=> { console.log("completered")})
+    this.recipeService.onRecipesChange.subscribe((recipes) => {
+      this.recipes = recipes;
+      console.log("IM HERE")
+    });
 
-    const os = Observable.create( (observer: Observer<string>) => {
-      setTimeout(()=>
-          observer.next("test")
-        ,2000);
-      setTimeout(
-        ()=>
-          observer.next("test2"),4000);
-    })
+    // const observable = Observable.interval(300);
+    // observable.take(2).map((data)=>{return data+"a"}).subscribe( (data) => {
+    //     console.log(data);
+    //   },()=> {},
+    //   ()=> { console.log("completered")})
+    //
+    // const os = Observable.create( (observer: Observer<string>) => {
+    //   setTimeout(()=>
+    //       observer.next("test")
+    //     ,2000);
+    //   setTimeout(
+    //     ()=>
+    //       observer.next("test2"),4000);
+    // })
   }
 
   onNewRecipe() {
