@@ -26,7 +26,7 @@ export class RecipeService {
   recipeSelected = new EventEmitter<Recipe>();
 
   getRecipe(id: number) {
-    let recipe = this.recipes.find((rec)=>{
+    let recipe = this.recipes.find((rec) => {
       return rec.id === id;
     })
     return recipe;
