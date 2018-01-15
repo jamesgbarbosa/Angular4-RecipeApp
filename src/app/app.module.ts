@@ -19,6 +19,8 @@ import {AppRoutingModule} from "./app-routing.module";
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     DropDown,
     RecipeStartComponent,
     RecipeEditComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
