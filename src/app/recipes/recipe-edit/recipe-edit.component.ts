@@ -73,7 +73,7 @@ export class RecipeEditComponent implements OnInit {
   }
 
   cancel() {
-    this.router.navigate(['../../..'], {relativeTo: this.route})
+    this.router.navigate(['../'], {relativeTo: this.route})
   }
 
 }

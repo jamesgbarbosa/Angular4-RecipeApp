@@ -43,7 +43,7 @@ export class RecipeService {
 
   deleteRecipe(recipe: Recipe) {
     this.recipes.splice(this.recipes.findIndex( element => {return element.id === recipe.id }), 1)
-    this.onRecipesChange.next(this.recipes.splice())
+    this.onRecipesChange.next(this.recipes.slice())
   }
 
   getRecipe(id: number) {
