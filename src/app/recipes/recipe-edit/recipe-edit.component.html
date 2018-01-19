@@ -3,7 +3,7 @@
     <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()" #f="ngForm">
       <div class="row">
         <div class="col-xs-12">
-          <button type="submit" class="btn btn-success">Submit</button>
+          <button type="submit" class="btn btn-success" [disabled]="!f.valid">Submit</button>
           <button type="button" class="btn btn-danger" (click)="cancel()">Cancel</button>
         </div>
       </div>
