@@ -8,30 +8,14 @@ import {Subject} from "rxjs/Subject";
 export class RecipeService {
   onRecipesChange = new Subject<Recipe[]>();
 
-  recipes: Recipe[] = [
-    new Recipe(1,'Recipe1', 'This is a yummy food',
-      'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'
-      , [new Ingredient('Bread', 1),new Ingredient('Apple', 5)]),
-    new Recipe(2,'Spicy Butter', 'This is the best food ive ever eaten!',
-      'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'
-    , [new Ingredient('Butter', 11),new Ingredient('Orange', 5)]),
-    new Recipe(3,'Pancakes', 'This is the best food ive ever eaten!',
-      'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'
-    , [new Ingredient('Milk', 5),new Ingredient('Egg', 5)]),
-    new Recipe(4,'Chicken Roast', 'This is the best food ive ever eaten!',
-      'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'
-    , [new Ingredient('Chicken', 2),new Ingredient('Garlick', 5)]),
-    new Recipe(5,'Curry', 'Best curry in town!!',
-      'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'
-    , [new Ingredient('Curry', 10),new Ingredient('Orange', 5)])
-  ];
+  recipes: Recipe[] = [];
 
   constructor(private shoppingListService: ShoppingListService) {
   }
 
   addRecipe(recipe: Recipe) {
     recipe.id = this.generateId();
-    this.recipes.push(recipe);
+    console.log(this.recipes);
     this.onRecipesChange.next(this.recipes.slice());
   }
 
@@ -63,5 +47,10 @@ export class RecipeService {
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.shoppingListService.addIngredients(ingredients);
+  }
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.onRecipesChange.next(this.recipes.slice());
   }
 }
