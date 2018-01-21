@@ -22,9 +22,12 @@ export class RecipeDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params
-      .subscribe((params:Params) => {
+      .subscribe((params: Params) => {
       this.recipe = this.recipeService.getRecipe(+params['id']);
-    })
+      if(!this.recipe) {
+        this.router.navigate(['/not-found'], {relativeTo: this.route});
+      }
+    });
   }
 
   onDelete() {

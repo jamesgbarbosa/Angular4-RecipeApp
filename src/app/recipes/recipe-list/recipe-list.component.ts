@@ -20,8 +20,6 @@ export class RecipeListComponent implements OnInit {
 
     this.recipeService.onRecipesChange.subscribe((recipes) => {
       this.recipes = recipes;
-      console.log(recipes)
-      console.log("---")
     });
 
     // const observable = Observable.interval(300);
