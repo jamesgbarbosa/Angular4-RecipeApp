@@ -24,7 +24,7 @@ export class AuthService {
         });
         this.router.navigate(['/'], {relativeTo: this.route});
       }).catch( (error)=> {
-        console.log("Failed to signin: " + error);
+        console.log("Failed to sign in: " + error);
       })
   }
 

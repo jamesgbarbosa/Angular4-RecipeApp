@@ -15,6 +15,7 @@ export class RecipeService {
 
   addRecipe(recipe: Recipe) {
     recipe.id = this.generateId();
+    this.recipes.push(recipe);
     console.log(this.recipes);
     this.onRecipesChange.next(this.recipes.slice());
   }
