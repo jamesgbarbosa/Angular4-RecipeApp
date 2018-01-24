@@ -19,6 +19,11 @@ export class HeaderComponent {
     })
   }
 
+  signOut() {
+    this.authService.signout();
+    console.log("Sign out success")
+  }
+
   onFetchData() {
     this.dataStorageService.getRecipes();
   }
