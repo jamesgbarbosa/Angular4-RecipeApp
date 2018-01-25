@@ -20,16 +20,15 @@ import {AuthService} from './auth/auth.service';
 import {AuthGuard} from './auth/auth.guard';
 import {RecipesModule} from './recipes/recipes.module';
 import {SharedModule} from './shared/shared.module';
+import {ShoppingListModule} from "./shopping-list/shopping-list.module";
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    // BasicDirective,
+    // BetterHighlightDirective,
     HeaderComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
-    BasicDirective,
-    BetterHighlightDirective,
     ErrorPageComponent,
     SignupComponent,
     SigninComponent,
@@ -40,6 +39,7 @@ import {SharedModule} from './shared/shared.module';
     HttpModule,
     AppRoutingModule,
     RecipesModule,
+    ShoppingListModule,
     SharedModule
   ],
   providers: [ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuard],
