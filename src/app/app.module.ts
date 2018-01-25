@@ -21,6 +21,7 @@ import {AuthGuard} from './auth/auth.guard';
 import {RecipesModule} from './recipes/recipes.module';
 import {SharedModule} from './shared/shared.module';
 import {ShoppingListModule} from "./shopping-list/shopping-list.module";
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -32,13 +33,13 @@ import {ShoppingListModule} from "./shopping-list/shopping-list.module";
     ErrorPageComponent,
     SignupComponent,
     SigninComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    RecipesModule,
     ShoppingListModule,
     SharedModule
   ],
