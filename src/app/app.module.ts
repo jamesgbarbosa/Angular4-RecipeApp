@@ -4,11 +4,6 @@ import {FormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import {BasicDirective} from './basic-highlight/basic-directive';
-import { BetterHighlightDirective } from './better/highlight/better-highlight.directive';
 import {ShoppingListService} from './shopping-list/shopping-list.service';
 import {AppRoutingModule} from './app-routing.module';
 import { ErrorPageComponent } from './error-page/error-page.component';
@@ -18,22 +13,18 @@ import {RecipeService} from './recipes/recipe.service';
 import {DataStorageService} from './shared/data-storage.service';
 import {AuthService} from './auth/auth.service';
 import {AuthGuard} from './auth/auth.guard';
-import {RecipesModule} from './recipes/recipes.module';
 import {SharedModule} from './shared/shared.module';
 import {ShoppingListModule} from "./shopping-list/shopping-list.module";
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './core/home/home.component';
+import {CoreModule} from "./core/core.module";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    // BasicDirective,
-    // BetterHighlightDirective,
-    HeaderComponent,
-    ErrorPageComponent,
+    // ErrorPageComponent,
     SignupComponent,
     SigninComponent,
-    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +32,8 @@ import { HomeComponent } from './home/home.component';
     HttpModule,
     AppRoutingModule,
     ShoppingListModule,
-    SharedModule
+    SharedModule,
+    CoreModule
   ],
   providers: [ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
