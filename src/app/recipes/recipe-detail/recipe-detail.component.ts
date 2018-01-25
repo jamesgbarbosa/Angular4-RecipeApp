@@ -24,9 +24,11 @@ export class RecipeDetailComponent implements OnInit {
     this.route.params
       .subscribe((params: Params) => {
       this.recipe = this.recipeService.getRecipe(+params['id']);
-      if(!this.recipe) {
-        this.router.navigate(['/not-found'], {relativeTo: this.route});
-      }
+
+      // if(!this.recipe) {
+      //   console.log("Page not found");
+      //   this.router.navigate(['/not-found'] , {relativeTo: this.route})
+      // }
     });
   }
 

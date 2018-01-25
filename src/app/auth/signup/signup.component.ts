@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {NgForm} from '@angular/forms';
-import * as firebase from 'firebase';
-import {ActivatedRoute, Router} from '@angular/router';
 
+import {NgForm} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
+import {AuthService} from '../auth.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -10,7 +10,9 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+
+  constructor(private route: ActivatedRoute, private router: Router, private authService:AuthService) { }
+
 
   ngOnInit() {
   }
@@ -18,12 +20,7 @@ export class SignupComponent implements OnInit {
   onSignup(form: NgForm) {
     const email = form.value.email;
     const password = form.value.password;
-    firebase.auth().createUserWithEmailAndPassword(email, password).then( () => {
-      console.log('Account creation success');
-      this.router.navigate(['/'], {relativeTo: this.route});
-    }).catch((err) => {
-      console.log('Sign up failed with reason: ' + err);
-    });
+    this.authService.signup(email,password);
   }
 
 }

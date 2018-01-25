@@ -1,4 +1,4 @@
-<div *ngIf="recipe">
+<ng-template [ngIf]="recipe">
   <div class="row">
     <div class="col-xs-12">
       <img
@@ -34,7 +34,7 @@
       {{ recipe.description }}
     </div>
   </div>
-  <div class="row" >
+  <div class="row">
     <div class="col-xs-12">
       <ul class="list-group">
         <a
@@ -47,4 +47,4 @@
       </ul>
     </div>
   </div>
-</div>
+</ng-template>
