@@ -35,14 +35,18 @@ export class AuthService {
   }
 
   isAuthenticated() {
-    return this.token != null;
+    const userKey = Object.keys(window.localStorage)
+      .filter(it => it.startsWith('firebase:authUser'))[0];
+    const user = userKey ? JSON.parse(localStorage.getItem(userKey)) : undefined;
+    if(user) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   getToken() {
-    firebase.auth().currentUser.getIdToken()
-      .then(
-        (tk) => { this.token = tk;});
-    return this.token;
+    return firebase.auth().currentUser.getIdToken();
   }
 
 }

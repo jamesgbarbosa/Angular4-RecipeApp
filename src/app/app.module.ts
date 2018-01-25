@@ -33,7 +33,6 @@ import {DropDown} from "./shared/dropdown";
     ErrorPageComponent,
     SignupComponent,
     SigninComponent,
-    DropDown
   ],
   imports: [
     BrowserModule,

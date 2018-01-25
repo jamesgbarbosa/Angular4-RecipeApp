@@ -13,10 +13,7 @@ export class HeaderComponent {
   constructor(private dataStorageService: DataStorageService, private recipeService: RecipeService, private authService:AuthService) {}
 
   onSaveData() {
-    this.dataStorageService.storeRecipes()
-      .subscribe((response: Response) => {
-      console.log(response)
-    })
+    this.dataStorageService.storeRecipes();
   }
 
   signOut() {
